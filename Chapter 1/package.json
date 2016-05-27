@@ -1,0 +1,36 @@
+{
+  "name": "crm",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/robert52/mean-blueprints/crm.git"
+  },
+  "engines": {
+    "node": ">=0.12.0"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "unit": "mocha tests/unit/ --ui bdd --recursive --reporter spec --timeout 10000 --slow 900",
+    "integration": "mocha tests/integration/ --ui bdd --recursive --reporter spec --timeout 10000 --slow 900"
+  },
+  "dependencies": {
+    "async": "^0.9.0",
+    "body-parser": "^1.12.3",
+    "express": "^4.12.4",
+    "express-session": "^1.11.2",
+    "express-validator": "^2.9.0",
+    "lodash": "^3.7.0",
+    "method-override": "^2.3.2",
+    "mongoose": "^4.0.2",
+    "passport": "^0.2.1",
+    "passport-local": "^1.0.0",
+    "serve-static": "^1.9.2",
+    "swig": "^1.4.2"
+  },
+  "devDependencies": {
+    "chai": "^2.3.0",
+    "chai-things": "^0.2.0",
+    "mocha": "^2.2.4",
+    "request": "^2.55.0"
+  }
+}

@@ -1,0 +1,80 @@
+<section class="contacts">
+  <div class="container">
+    <header>
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Customers</a>
+          </div>
+          <form class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+              <input type="text"
+                     data-ng-model="vmContacts.searchText"
+                     data-ng-change="vmContacts.searchTextChanged()"
+                     class="form-control" placeholder="Search">
+            </div>
+          </form>
+        </div>
+      </nav>
+    </header>
+    <div class="row contacts-list">
+      <div class="col-md-3">
+        <div class="panel panel-default">
+          <div class="panel-heading">Add new contact:</div>
+          <form novalidate>
+            <div class="panel-body">
+              <div class="form-group">
+                <input type="text" class="form-control" id="new-contact-name" placeholder="Jane Doe" ng-model="vmContacts.newContact.name">
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control" id="new-contact-email" placeholder="jane.doe@example.com" ng-model="vmContacts.newContact.email">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="new-contact-company" placeholder="Company" ng-model="vmContacts.newContact.company">
+              </div>
+              <div class="form-group">
+                <input type="phone" class="form-control" id="new-contact-phone" placeholder="+00 0000 000 000" ng-model="vmContacts.newContact.phoneNumber">
+              </div>
+            </div>
+            <div class="panel-footer">
+                <button type="submit" class="btn btn-success btn-xs" ng-click="vmContacts.addContact(vmContacts.newContact)">save contact</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-md-3" ng-repeat="contact in vmContacts.filteredContacts">
+        <div class="panel panel-default">
+          <div class="panel-heading">&nbsp;</div>
+          <div class="panel-body">
+            <div class="form-group">
+              <span editable-text="contact.name" e-name="name" e-form="contactEditForm">Name: {{ contact.name }}</span>
+            </div>
+            <div class="form-group">
+              <span editable-text="contact.email" e-name="email" e-form="contactEditForm">{{ contact.email }}</span>
+            </div>
+            <div class="form-group">
+              <span editable-text="contact.phoneNumber" e-name="phoneNumber" e-form="contactEditForm">{{ contact.phoneNumber }}</span>
+            </div>
+            <div class="form-group">
+              <span editable-text="contact.company" e-name="company" e-form="contactEditForm">{{ contact.company }}</span>
+            </div>
+          </div>
+          <div class="panel-footer">
+            <form editable-form name="contactEditForm" ng-show="contactEditForm.$visible" onbeforesave="vmContacts.saveContact($data, contact._id)">
+              <button class="btn btn-success btn-xs" type="submit" ng-disabled="contactEditForm.$waiting">save</button>
+              <button class="btn btn-default btn-xs" type="button" ng-disabled="contactEditForm.$waiting" ng-click="contactEditForm.$cancel()">cancel</button>
+            </form>
+            <button class="btn btn-default btn-xs" type="submit" ng-show="!contactEditForm.$visible" ng-click="contactEditForm.$show()">edit</button>
+            <button class="btn btn-danger btn-xs" type="button" ng-show="!contactEditForm.$visible" ng-click="vmContacts.deleteContact(contact._id)">delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

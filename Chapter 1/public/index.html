@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" data-framework="angularjs">
+  <head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body ng-app="crm">
+
+    <main>
+      <ng-view />
+    </main>
+
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-route/angular-route.js"></script>
+    <script src="node_modules/angular-xeditable/xeditable.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/services/signinInterceptor.js"></script>
+    <script src="js/services/contactService.js"></script>
+    <script src="js/filters/nameEmailCompanyFilter.js"></script>
+    <script src="js/controllers/signinController.js"></script>
+    <script src="js/controllers/contactController.js"></script>
+  </body>
+</html>
