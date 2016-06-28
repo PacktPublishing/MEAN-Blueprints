@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="node_modules/socket.io-client/socket.io.js"></script>
+    <script>
+      var socket = io();
+      window.socket = socket;
+
+      socket.on('connect', function() {
+        console.log('Connected to socket server ', socket.id);
+      });
+
+      socket.on('send:im:failure', function(data) {
+        console.error('send:im:failure', data);
+      });
+
+      socket.on('send:im:success', function(data) {
+        console.info('send:im:success', data);
+      });
+
+      socket.on('receive:im', function(data) {
+        console.info('receive:im', data);
+      });
+
+      window.signin = function(email, password) {
+        $
+        .post('/auth/signin', { email: email, password: password })
+        .done(function(result) {
+          console.info(result);
+        });
+      }
+    </script>
+  </body>
+</html>

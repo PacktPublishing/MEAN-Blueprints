@@ -1,0 +1,11 @@
+<div class="col col-25 product-item">
+  <a href="{{ baseUrl }}/products/{{ product.slug }}">
+    <img src="http://placehold.it/208x140?text=product+image&txtsize=18" />
+  </a>
+  <h2>
+    <a href="{{ baseUrl }}/products/{{ product.slug }}">{{ product.title }}</a>
+  </h2>
+  <p>{{ product.summary }}</p>
+  <p>price: {{ product.price.display }} {{ product.price.currency}}</p>
+  <p><button class="button">add to cart</button></p>
+</div>

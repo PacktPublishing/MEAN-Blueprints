@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <title>Ecommerce - admin</title>
+    <link href='https://fonts.googleapis.com/css?family=Work+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+    <script src="node_modules/angular2/bundles/router.dev.js"></script>
+    <script src="node_modules/angular2/bundles/http.dev.js"></script>
+    <script>
+      System
+      .config({
+        map: {
+          rxjs: 'node_modules/rxjs' //or wherever you have it installed
+        },
+        packages: {
+          app: {
+            format: 'register',
+            defaultExtension: 'js'
+          },
+          rxjs: {
+            defaultExtension: 'js'
+          }
+        }
+      });
+
+      System
+      .import('app/boot')
+      .then(null, console.error.bind(console));
+    </script>
+  </head>
+
+  <body>
+    <div class="container">
+      <expense-tracker>loading...</expense-tracker>
+    </div>
+  </body>
+
+</html>

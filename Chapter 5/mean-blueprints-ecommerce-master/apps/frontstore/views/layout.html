@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ecommerce</title>
+    {% include "includes/stylesheets.html" %}
+  </head>
+  <body>
+    <div class="container">
+      <div class="app-wrapper card whiteframe-z2">
+
+        {% block header %}
+        <header>
+          <div class="row">
+            <div class="col">
+              <h1><a href="#">Awesome store</a></h1>
+              <span class="pull-right">{{ currentUser.email }}</span>
+            </div>
+          </div>
+        </header>
+        {% endblock %}
+
+        <div class="row">
+          {% block content %}{% endblock %}
+        </div>
+
+      </div>
+    <div>
+    {% block footer %}
+    <footer></footer>
+    {% endblock %}
+  </body>
+</html>

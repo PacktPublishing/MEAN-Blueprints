@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <div class="product-list row">
+    <div class="col">
+    {% for product in products %}
+      {% include "partials/product.html" %}
+    {% endfor %}
+    </div>
+  </div>
+{% endblock %}

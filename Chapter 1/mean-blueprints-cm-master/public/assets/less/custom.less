@@ -1,0 +1,145 @@
+body {
+  background-color: @primary;
+}
+
+.container {
+  width: 64em;
+}
+
+.app-wrapper {
+  margin-top: 3em;
+}
+
+.contact-form-wrapper {
+  margin-bottom: 3em;
+}
+
+/** chat app **/
+.thread-item {
+  margin: 0.8em 0;
+  a {
+    color: lighten(@baseFontColor, 20%);
+    text-decoration: none;
+
+    &:hover {
+      color: @baseFontColor;
+    }
+  }
+}
+
+.chat-wrapper {
+  margin-top: 3em;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.chat-header {
+  border-bottom: 1px solid @grayLight;
+}
+
+.threads-container {
+  border-right: solid 1px @grayLight;
+}
+
+.messages-container {
+}
+
+.chat-wrapper,
+.threads-container,
+.messages-container {
+  min-height: 30em;
+}
+
+.message-list {
+  padding-top: .8em;
+  max-height: 27em;
+  overflow-y: auto;
+}
+
+.message-item {
+  position: relative;
+  margin-top: .75em;
+  margin-bottom: .75em;
+
+  .message-identifier {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .message-content {
+    margin-left: 2.75em;
+  }
+
+  .message-sender {
+    line-height: 1em;
+
+    .user-name {
+      color: darken(@grayLight, 25%);
+      // font-weight: bold;
+    }
+
+    .user-name,
+    .message-timestamp {
+      font-size: .85em;
+      line-height: 1em;
+    }
+
+    .message-timestamp {
+      color: darken(@grayLight, 25%);
+    }
+  }
+}
+
+.message-form-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
+
+.message-form {
+  width: 100%;
+}
+
+.form-control {
+  border-color: @grayLight;
+
+  &:focus {
+    outline: 0;
+    border-color: darken(@grayLight, 25%);
+  }
+
+  &.block {
+    width: 100%;
+  }
+}
+
+.user-search-container {
+  .form-control {
+    margin-top: 1em;
+  }
+}
+
+.user-list-container {
+  position: relative;
+
+  .users-container {
+    display: none;
+    position: absolute;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 25em;
+    background: white;
+
+    &.active {
+      display: block;
+    }
+  }
+}

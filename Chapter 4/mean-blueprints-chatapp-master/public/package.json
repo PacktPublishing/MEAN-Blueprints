@@ -1,0 +1,18 @@
+{
+  "private": true,
+  "name": "mean-blueprints-chatapplication",
+  "dependencies": {
+    "angular2": "^2.0.0-beta.0",
+    "es6-promise": "^3.0.2",
+    "es6-shim": "^0.33.13",
+    "reflect-metadata": "^0.1.2",
+    "rxjs": "^5.0.0-beta.0",
+    "socket.io-client": "^1.4.3",
+    "systemjs": "^0.19.9",
+    "zone.js": "^0.5.10"
+  },
+  "devDependencies": {
+    "tsd": "^0.6.5",
+    "typescript": "^1.7.5"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "name": "express-api-starter",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/robert52/express-api-starter.git"
+  },
+  "engines": {
+    "node": ">=4.2.6"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "unit": "mocha tests/unit/ --ui bdd --recursive --reporter spec --timeout 10000 --slow 900",
+    "integration": "mocha tests/integration/ --ui bdd --recursive --reporter spec --timeout 10000 --slow 900"
+  },
+  "dependencies": {
+    "async": "^0.9.2",
+    "body-parser": "^1.14.1",
+    "connect-mongo": "^0.8.2",
+    "express": "^4.13.3",
+    "express-session": "^1.12.1",
+    "express-validator": "^2.18.0",
+    "lodash": "^3.10.1",
+    "method-override": "^2.3.5",
+    "mongoose": "^4.4.6",
+    "morgan": "^1.6.1",
+    "nunjucks": "^2.3.0",
+    "passport": "^0.2.2",
+    "passport-http": "^0.2.2",
+    "passport-http-bearer": "^1.0.1",
+    "passport-local": "^1.0.0",
+    "serve-static": "^1.10.2",
+    "socket.io": "^1.4.5",
+    "winston": "^2.1.1"
+  },
+  "devDependencies": {
+    "chai": "^2.3.0",
+    "chai-things": "^0.2.0",
+    "mocha": "^2.3.3",
+    "request": "^2.55.0"
+  }
+}

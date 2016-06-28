@@ -1,0 +1,18 @@
+{
+  "private": true,
+  "name": "mean-blueprints-auction",
+  "dependencies": {
+    "angular2": "^2.0.0-beta.14",
+    "es6-promise": "^3.0.2",
+    "es6-shim": "^0.35.0",
+    "reflect-metadata": "^0.1.2",
+    "rxjs": "^5.0.0-beta.2",
+    "socket.io-client": "^1.4.5",
+    "systemjs": "^0.19.25",
+    "zone.js": "^0.6.6"
+  },
+  "devDependencies": {
+    "typings": "^0.7.12",
+    "typescript": "^1.8.9"
+  }
+}

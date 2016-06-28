@@ -1,0 +1,38 @@
+<div class="row contact-form-wrapper">
+  <a href="#" [routerLink]="['ContactList']">&lt; back to contacts</a>
+  <h2>Add new contact</h2>
+  <form role="form"
+    (submit)="onSubmit($event)">
+
+    <div class="form-group">
+      <label for="name">Full name</label>
+      <input type="text" [(ngModel)]="contact.name"
+        class="form-control" id="name" placeholder="Jane Doe">
+    </div>
+    <div class="form-group">
+      <label for="email">E-mail</label>
+      <input type="text" [(ngModel)]="contact.email"
+        class="form-control" id="email" placeholder="jane.doe@example.com">
+    </div>
+    <div class="form-group">
+      <label for="city">City</label>
+      <input type="text"
+        [(ngModel)]="contact.city"
+        class="form-control" id="city" placeholder="a nice place ...">
+    </div>
+    <div class="form-group">
+      <label for="company">Company</label>
+      <input type="text"
+        [(ngModel)]="contact.company"
+        class="form-control" id="company" placeholder="working at ...">
+    </div>
+    <div class="form-group">
+      <label for="phoneNumber">Phone</label>
+      <input type="text"
+        [(ngModel)]="contact.phoneNumber"
+        class="form-control" id="phoneNumber" placeholder="mobile or landline">
+    </div>
+
+    <button type="submit" class="button">Submit</button>
+  </form>
+</div>

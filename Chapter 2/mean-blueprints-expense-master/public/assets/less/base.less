@@ -1,0 +1,302 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box
+}
+
+:after,:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box
+}
+
+/* Dead Simple Grid (c) 2015 Vladimir Agafonkin */
+
+.row .row {
+  margin:  0 -1.5em;
+}
+
+.col {
+  padding: 0  1.5em;
+}
+
+.row,
+.col {
+  position: relative;
+}
+
+.row:before, .row:after {
+  content: "";
+  display: table;
+}
+.row:after {
+  clear: both;
+}
+
+/* end */
+[class^="col-"],
+[class*=" col-"] {
+  float: left;
+}
+
+.col {
+  float: left;
+  width: 100%;
+}
+
+.col-100 {
+  width: 100%;
+}
+
+.col-50 {
+  width: 50%;
+}
+
+.col-25 {
+  width: 25%;
+}
+
+.col-33 {
+  width: 33.3333%;
+}
+
+.col-66 {
+  width: 66.6666%;
+}
+
+.col-75 {
+  width: 75%;
+}
+
+.col-10 {
+  width: 10%;
+}
+
+.col-20 {
+  width: 20%;
+}
+
+html,
+body {
+  height: 100%;
+  max-height: 100%;
+  font-size: @baseFontSize;
+}
+
+body {
+  max-height: 100%;
+  color: @baseFontColor;
+  font-size: @baseBodyFontSize;
+  font-family: @baseFontFamily;
+  line-height: @baseLineHeight;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 90em;
+
+  &.large {
+    max-width: 60em;
+  }
+
+  &::after,
+  &::before {
+    display: table;
+    content: " ";
+  }
+
+  &::after,
+  &::before {
+    clear: both;
+  }
+}
+
+.content { width: 66.66%; }
+.sidebar { width: 33.33%; }
+
+.vertical {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.main-header {
+  position: relative;
+  display: table;
+  margin-bottom: 5rem;
+  width: 100%;
+  height: 100vh;
+  background: @baseFontColor no-repeat center center;
+  background-size: cover;
+  color: @baseFontColorAlt;
+  text-align: center;
+  overflow: hidden;
+
+  &.bg-img {
+    background-image: url(../img/main-header-bg.jpg);
+  }
+}
+
+.home-section {
+  margin-bottom: 5rem;
+}
+
+.card {
+  border-radius: @inputBorderRadius;
+  margin-bottom: 2.5rem;
+}
+
+.whiteframe-z2 {
+  background-color: white;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.14), 0 4px 5px 0 rgba(0, 0, 0, 0.098), 0 1px 10px 0 rgba(0, 0, 0, 0.084);
+}
+
+h1 {
+  font-size: @h1FontSize;
+}
+
+h2 {
+  font-size: @h2FontSize;
+}
+
+h3 {
+  font-size: @h3FontSize;
+}
+
+h4 {
+  font-size: @h4FontSize;
+}
+
+h5 {
+  font-size: @h5FontSize;
+}
+
+a {
+  color: @primary;
+}
+
+.button {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  background-color: @grayLight;
+  border-radius: @inputBorderRadius;
+  border: none;
+  color: @baseFontColor;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 500;
+  height: @inputHeight;
+  line-height: @inputHeight;
+  outline: none;
+  padding: 0 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  white-space: nowrap;
+  width: auto;
+
+  &:hover {
+    background-color: darken(@grayLight, 4%);
+  }
+  &:active, &:focus, &.active {
+    background-color: darken(@grayLight, 8%);
+  }
+  &:visited {
+    color: @baseFontColor;
+  }
+
+  &.primary {
+    background-color: @primary;
+    color: white;
+    &:hover {
+      background-color: darken(@primary, 4%);
+    }
+    &:active, &:focus, &.active {
+      background-color: darken(@primary, 8%);
+    }
+  }
+
+  &.block {
+    width: 100%;
+  }
+
+  &.small {
+    height: @inputHeight - 14;
+    line-height: @inputHeight - 14;
+    font-size: @baseBodyFontSize - 4;
+  }
+
+  &.link {
+    background-color: transparent;
+    &:hover {
+      color: darken(@primary, 4%);
+    }
+    &:active, &:focus, &.active {
+      color: darken(@primary, 8%);
+    }
+  }
+
+  &.green {
+    background-color: @success;
+    color: white;
+    &:hover {
+      background-color: darken(@success, 4%);
+    }
+    &:active, &:focus, &.active {
+      background-color: darken(@success, 8%);
+    }
+  }
+}
+
+.form-control {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  background-color: #fff;
+  border-radius: @inputBorderRadius;
+  border: solid 1px @grayLight;
+  box-sizing: border-box;
+  clear: both;
+  display: block;
+  //float: left;
+  font-family: inherit;
+  font-size: @baseBodyFontSize;
+  font-weight: normal;
+  height: @inputHeight;
+  line-height: @baseLineHeight;
+  outline: none;
+  padding-left: @inputPadding;
+  padding-right: @inputPadding;
+  position: relative;
+  text-align: left !important;
+  transition: all 0.2s ease-in-out;
+  user-select: none;
+  white-space: nowrap;
+  width: auto;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-card {
+  margin-top: 10em;
+}
+
+.form-small {
+  margin-left: auto;
+  margin-right: auto;
+  width: 20em;
+}
+
+.form-block {
+  .form-control {
+    width: 100%;
+  }
+}
+
+.login {
+  margin-bottom: 2.5rem;
+}
+
+.muted {
+  color: darken(@grayLight, 25%);
+}

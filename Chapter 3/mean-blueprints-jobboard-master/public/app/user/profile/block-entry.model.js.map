@@ -1,0 +1,1 @@
+{"version":3,"file":"block-entry.model.js","sourceRoot":"","sources":["../../../src/user/profile/block-entry.model.ts"],"names":[],"mappings":";;;;;;;YAAA;gBAKE,oBACE,KAAc,EACd,QAAiB,EACjB,WAAoB;oBAEpB,IAAI,CAAC,KAAK,GAAG,KAAK,CAAC;oBACnB,IAAI,CAAC,QAAQ,GAAG,QAAQ,CAAC;oBACzB,IAAI,CAAC,WAAW,GAAG,WAAW,CAAC;gBACjC,CAAC;gBACH,iBAAC;YAAD,CAAC,AAdD,IAcC;YAdD,mCAcC,CAAA"}
